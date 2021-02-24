@@ -1,5 +1,7 @@
 /* base styles */
-
+body {
+    box-sizing: border-box;
+}
 
 
 /* nav styles */
@@ -7,9 +9,24 @@
 
 
 /* bio styles */
+.bio-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bio {
+    width: 410px;
+    max-width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
 .bio-img {
     max-width: fit-content;
 }
 
+.bio-text{
+    display: none;
+}
 
 /* media queries */
