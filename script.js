@@ -1,5 +1,4 @@
 // show beetle bio modal on image click
-debugger;
 const bigGirlImg = document.querySelector('#big-girl-img');
 const bigGirlModal = document.querySelector('#big-girl-modal');
 const blackbuttImg = document.querySelector('#blackbutt-img');
@@ -13,16 +12,16 @@ const sicklyTwinModal = document.querySelector('#sickly-twin-modal');
 const strongTwinImg = document.querySelector('#strong-twin-img');
 const strongTwinModal = document.querySelector('#strong-twin-modal');
 
-const beetles = ["bigGirl", "blackbutt", "theOtherOne", "newGirl", "sicklyTwin", "strongTwin"];
+const beetles = [{clickImg: bigGirlImg, box: bigGirlModal}, 
+    {clickImg: blackbuttImg, box: blackbuttModal}, 
+    {clickImg: theOtherOneImg, box: theOtherOneModal}, 
+    {clickImg: newGirlImg, box: newGirlModal},
+    {clickImg: sicklyTwinImg, box: sicklyTwinModal},
+    {clickImg: strongTwinImg, box: strongTwinModal}];
 
 for (i=0; i<beetles.length; i++) {
-    let beetleImg = beetles[i] + "Img";
-    let beetleModal = beetles[i] + "Modal";
-    beetleImg.addEventListener('click', () => {
-        beetleModal.style.display = 'block';
+    let beetle = beetles[i];
+    beetle.clickImg.addEventListener('click', () => {
+    beetle.box.style.display = 'block';
 })}
-
-// bigGirlImg.addEventListener('click', () => {
-//    bigGirlModal.style.display = 'block';
-// })
 
