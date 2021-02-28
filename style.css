@@ -1,8 +1,14 @@
 /* body styles */
 body {
     box-sizing: border-box;
+    font-family: 'Cormorant Infant', serif;
 }
 
+h2,
+p {
+    margin: .5em 0;
+
+}
 footer{
     /* footer takes up full width and is fixed to the bottom of the page */
     position: fixed;
@@ -12,17 +18,42 @@ footer{
 }
 
 /* nav styles */
+nav,
+nav ul {
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    align-items: center;
+}
 
+nav ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+nav ul a{
+    display: block;
+    text-decoration: none;
+    padding: .25em 5em;
+    margin-bottom: .25em;
+    color: #7007e9;
+    border: 1px solid lightpink;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+}
 
 
 /* bio pic styles */
 .bio-img-container {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 25px;
+
+    margin-bottom: 25px;
 
     position: static;
-    z-index: -1;
+    z-index: 1;
 }
 
 .bio-img{
@@ -33,14 +64,14 @@ footer{
 
 /* bio modal styles */
 .bio-modal {
-    display: none; /* bio boxes are hidden */
+    display: none;
+    /* bio boxes are hidden */
     
     width: 605px; 
     max-width: fit-content;
     background-color: white;
-    margin: 0 auto;
     
-    z-index: 0;
+    z-index: 2;
     position: absolute;
     /* boxes are in front of pictures     */
 }
@@ -54,7 +85,42 @@ footer{
 #subscribe-link{
     padding-bottom: 25px;
     position: static;
-    z-index: -1;
+    z-index: 1;
 }
 
 /* media queries */
+@media (min-width: 650px){
+    nav{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #site-logo{
+        width: 200px;
+    }
+}
+
+@media (min-width: 900px) {
+    nav {
+        align-items: flex-end;
+        border-bottom: 1px solid lightpink;
+        margin-bottom: 30px;
+    }
+    nav ul{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    nav ul a{
+        padding: .25em 1em;
+        margin-left: 20px;
+        border: none;
+    }
+
+    #site-logo{
+        width: 300px;
+        margin: 0 50px;
+    }
+
+   
+}
