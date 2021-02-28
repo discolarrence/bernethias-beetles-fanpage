@@ -1,8 +1,15 @@
-/* base styles */
+/* body styles */
 body {
     box-sizing: border-box;
 }
 
+footer{
+    /* footer takes up full width and is fixed to the bottom of the page */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;        
+}
 
 /* nav styles */
 
@@ -12,6 +19,10 @@ body {
 .bio-img-container {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 25px;
+
+    position: static;
+    z-index: -1;
 }
 
 .bio-img{
@@ -23,19 +34,27 @@ body {
 /* bio modal styles */
 .bio-modal {
     display: none; /* bio boxes are hidden */
+    
+    width: 605px; 
     max-width: fit-content;
-    width: 610px;
     background-color: white;
-    border: 1px red solid;
-    z-index: 2; /* bio boxes are in front of pictures     */
+    margin: 0 auto;
+    
+    z-index: 0;
+    position: absolute;
+    /* boxes are in front of pictures     */
 }
 
 .modal-img {
     max-width: fit-content;
 }
 
-.modal-text{
-    
+
+/* subscription link styles */
+#subscribe-link{
+    padding-bottom: 25px;
+    position: static;
+    z-index: -1;
 }
 
 /* media queries */
