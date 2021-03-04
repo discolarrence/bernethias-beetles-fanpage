@@ -56,7 +56,7 @@ nav ul a{
     z-index: 1;
 }
 
-.bio-img{
+.bio-img-container>* {
     margin: auto;
     margin-top: 20px;
 }
