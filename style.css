@@ -56,7 +56,9 @@ nav ul a{
     z-index: 1;
 }
 
-.bio-img-container>* {
+.bio-img-container img {
+    height: 600 px;
+    width: 600 px;
     margin: auto;
     margin-top: 20px;
 }
@@ -65,19 +67,36 @@ nav ul a{
 /* bio modal styles */
 .bio-modal {
     display: none;
+    flex-direction: column;
     /* bio boxes are hidden */
     
     width: 605px; 
     max-width: fit-content;
     background-color: white;
+    border: 2px solid #36175a;
     
     z-index: 2;
     position: absolute;
     /* boxes are in front of pictures     */
 }
 
+.x-close-icon {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #36175a;
+    align-self: flex-end;
+}
+
 .modal-img {
+    margin: 10px 20px 0 20px;
     max-width: fit-content;
+    box-shadow: 0px 0px 5px 2px  #36175a;
+}
+
+.modal-text {
+    padding: 0 20px 15px;
 }
 
 
