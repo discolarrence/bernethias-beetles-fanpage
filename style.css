@@ -2,6 +2,7 @@
 body {
     box-sizing: border-box;
     font-family: 'Cormorant Infant', serif;
+    margin: 0 20px 0 20px;
 }
 
 h2,
@@ -60,6 +61,8 @@ nav ul a{
     height: auto;
     margin: auto;
     margin-top: 20px;
+    border: 10px solid lightpink;
+    box-shadow: 0px 0px 5px 2px  #36175a;
 }
 
 
@@ -69,10 +72,11 @@ nav ul a{
     flex-direction: column;
     /* bio boxes are hidden */
     
-    width: 605px; 
+    width: 305px; 
     max-width: fit-content;
     background-color: lightpink;
     border: 2px solid #36175a;
+    box-shadow: 0px 0px 10px 800px  #36175abb;
     margin: auto;
     left: 0;
     right: 0;
@@ -115,7 +119,9 @@ nav ul a{
         width: 400px;
     }
 }
+
 @media (min-width: 650px){
+
     nav{
         flex-direction: row;
         justify-content: space-evenly;
@@ -124,9 +130,17 @@ nav ul a{
     #site-logo{
         width: 200px;
     }
+
+    .bio-modal{
+        width: 605px;
+    }
 }
 
 @media (min-width: 900px) {
+    body{
+        margin: 0 50px 0 50px;
+    }
+
     nav {
         align-items: flex-end;
         border-bottom: 1px solid lightpink;
