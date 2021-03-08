@@ -1,5 +1,4 @@
 
-
 //define variables
 const bioImgs = document.querySelectorAll('.bio-img-container img');
 const bioImgModals = document.querySelectorAll('.bio-modal');
@@ -20,28 +19,9 @@ for (i=0; i<bioImgs.length; i++) {
     });
 };
 
-// //hide bio modal on click anywhere
+// hide bio modal on click anywhere
 document.addEventListener('click', (event) => { 
     if (event.target.className !== 'bio-img' && 'bio-modal') {
         closeBioModal();
     };
 })
-
-// document.addEventListener('click', (event) => {
-//     closeBioModal();
-//     for (i=0; i<bioImgs.length; i++) {
-//         if (event.target.id == bioImgs[i]) {
-//             let beetleImg = document.getElementById(event.target.id+'-modal');
-//             beetleImg.style.display = 'flex';
-//         }
-//     };
-//     for (i=0; i<bioImgModals.length; i++) {
-//         if (event.target.className == 'bio-modal'){
-//            let beetleModal = document.getElementById(event.target.id);
-//             beetleModal.style.display = 'flex'; 
-//         }
-//     };
-//     if (event.target.className == 'x-close-icon'){
-//             closeBioModal();
-//         }  
-//     })

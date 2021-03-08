@@ -26,17 +26,17 @@
     <main>
         <h2>Bernethia's Beetles Weekly Newsletter</h2>
         <p>Exclusive photos and videos, care tips, chances to win cool beetle-themed prizes, and a personalized message from the whole gang on your birthday.</p>
-        <form action='index.html' method="POST">
+        <form novalidate action='index.html' method="POST" class="signup-form">
             <h3>Sign Up!</h3>
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name">
+            <label for="first-name">*First Name:</label>
+            <input type="text" id="first-name" name="first-name" required pattern="[A-Za-z]">
             <label for="last-name">Last Name:</label>
             <input type="text" id="last-name" name="last-name">
-            <label for="email">Email:</label>
+            <label for="email">*Email:</label>
             <input type="email" id="email" name="email">
-            <label for="birthday">Birthday</label>
+            <label for="birthday">*Birthday</label>
             <input type="date" id="birthday" name="birthday">
-            <label for="favorite-beetle">Who is your favorite beetle?</label>
+            <label for="favorite-beetle">*Who is your favorite beetle?</label>
             <select id="favorite-beetle" name="favorite-beetle">
                 <option value="big-girl">Big Girl</option>
                 <option value="blackbutt">Blackbutt</option>
@@ -45,11 +45,12 @@
                 <option value="sickly-twin">Sickly Twin</option>
                 <option value="strong-twin">Strong Twin</option>
             </select>
-            <button type="submit">Submit</button>
+            <button type="button" class="submit">Submit</button>
+            <p class="form-return-message">* = required</p>
         </form>
     </main>
     <footer>
         <small>&copy;2021, Bernethia Blossoms. All Rights Reserved.</small>
     </footer>
-    <script src="script.js"></script>   
+    <script src="signup.js"></script>   
 </body>
