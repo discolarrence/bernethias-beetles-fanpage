@@ -63,7 +63,7 @@ nav ul a{
 
 .bio-img {
 /* clickable imgs setting for mobile */
-    width: 300px;
+    width: 375px;
     height: auto;
 
     margin: auto;
@@ -77,7 +77,7 @@ nav ul a{
 .bio-modal {
     width: 305px; 
     max-width: fit-content;
- /* bio modals are hidden */
+/* bio modals are hidden */
     display: none;
     flex-direction: column;
 /*modals are in front of pictures*/
@@ -122,12 +122,6 @@ nav ul a{
 }
 
 /* media queries */
-@media (min-width: 420px) {
-/* change to larger clickable imgs */
-    .bio-img{
-        width: 400px;
-    }
-}
 
 @media (min-width: 650px){
 /* change to medium nav */
@@ -138,6 +132,10 @@ nav ul a{
 
     #site-logo{
         width: 200px;
+    }
+
+    .bio-img{
+        width: 400px;
     }
 
 /* change to larger modal size */
