@@ -25,11 +25,12 @@
         </nav>
     </header>
     <main>
-        <h2>Bernethia's Beetles Weekly Newsletter</h2>
-        <p>Exclusive photos and videos, care tips, chances to win cool beetle-themed prizes, and a personalized message from the whole gang on your birthday.</p>
+        <div id="form-header">
+            <h2>Bernethia's Beetles Weekly Newsletter</h2>
+            <p>Exclusive photos and videos, care tips, chances to win cool beetle-themed prizes, and a personalized message from the whole gang on your birthday.</p>
+        </div>
         <form class="signup-form">
             <h3>Sign Up!</h3>
-            <p class="required">*=required</p>
             <label for="first-name">*First Name:</label>
             <input type="text" id="first-name" name="first-name" required pattern="\w">
             <label for="last-name">Last Name:</label>
@@ -49,10 +50,10 @@
                 <option>Strong Twin</option>
             </select>
             <button type="button" class="submit">Submit</button>
-            <div id="form-submit-message">
-                <!-- for adding messages through JS after submitting -->
-            </div>
         </form>
+        <div id="form-submit-message">
+            <p class="required">*=required</p>
+        </div>
     </main>
     <footer>
         <small>&copy;2021, Bernethia Blossoms. All Rights Reserved.</small> 

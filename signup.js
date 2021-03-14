@@ -48,9 +48,10 @@ submitButton.addEventListener('click', () => {
         let birthMonthNumber = parseInt(dateSplit[1], 10);
         let birthMonth = monthsOfTheYear[birthMonthNumber-1];
         let h4 = document.createElement('h4');
-        h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang as well as a special birthday message from ${favoriteBeetle.value} in ${birthMonth}.`;
+        h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${birthMonth}.`;
         formSubmitMessage.appendChild(h4);
     } else {
+        formSubmitMessage.innerHTML = '<p class="required">*=required</p>';
         for (i = 0; i < formErrorMessages.length; i++) {
             let p = document.createElement('p');
             p.textContent = formErrorMessages[i];
