@@ -19,9 +19,9 @@ for (i=0; i<bioImgs.length; i++) {
     });
 };
 
-// hide bio modal on click anywhere
+// hide bio modal with click on X
 document.addEventListener('click', (event) => { 
-    if (event.target.className !== 'bio-img' && 'bio-modal') {
+    if (event.target.className == 'x-close-icon') {
         closeBioModal();
     };
 })

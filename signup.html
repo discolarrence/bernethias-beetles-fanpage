@@ -29,6 +29,7 @@
         <p>Exclusive photos and videos, care tips, chances to win cool beetle-themed prizes, and a personalized message from the whole gang on your birthday.</p>
         <form class="signup-form">
             <h3>Sign Up!</h3>
+            <p class="required">*=required</p>
             <label for="first-name">*First Name:</label>
             <input type="text" id="first-name" name="first-name" required pattern="\w">
             <label for="last-name">Last Name:</label>
@@ -37,20 +38,23 @@
             <input type="email" id="email" name="email" >
             <label for="birthday">*Birthday</label>
             <input type="date" id="birthday" name="birthday">
-            <label for="favorite-beetle">Who is your favorite beetle?</label>
+            <label for="favorite-beetle">*Who is your favorite beetle?</label>
             <select id="favorite-beetle" name="favorite-beetle">
-                <option value="big-girl">Big Girl</option>
-                <option value="blackbutt">Blackbutt</option>
-                <option value="the-other-one">The Other One</option>
-                <option value="new-girl">New Girl</option>
-                <option value="sickly-twin">Sickly Twin</option>
-                <option value="strong-twin">Strong Twin</option>
+                <option>--Choose One--</option>
+                <option>Big Girl</option>
+                <option>Blackbutt</option>
+                <option>The Other One</option>
+                <option>New Girl</option>
+                <option>Sickly Twin</option>
+                <option>Strong Twin</option>
             </select>
             <button type="button" class="submit">Submit</button>
-            <p class="form-return-message">* = required</p>
+            <div id="form-submit-message">
+                <!-- for adding messages through JS after submitting -->
+            </div>
         </form>
     </main>
     <footer>
-        <small>&copy;2021, Bernethia Blossoms. All Rights Reserved.</small>
+        <small>&copy;2021, Bernethia Blossoms. All Rights Reserved.</small> 
     </footer> 
 </body>

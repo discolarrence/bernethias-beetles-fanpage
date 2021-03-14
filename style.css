@@ -7,7 +7,9 @@ body {
     background-color: #fbfafd
 }
 
-h2,
+h2, 
+h3,
+h4
 p {
     margin: .5em 0;
 
@@ -120,6 +122,13 @@ nav ul a{
     position: static;
     z-index: 1;
 }
+
+/* signup styles */
+.required,
+.error{
+    color: red;
+}
+
 
 /* media queries */
 
