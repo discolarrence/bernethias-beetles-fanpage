@@ -1,4 +1,4 @@
-/* body styles */
+/************** body styles **************/
 body {
     box-sizing: border-box;
     font-family: 'Cormorant Infant', serif;
@@ -9,12 +9,17 @@ body {
 
 h2, 
 h3,
-h4
+h4, 
 p {
     margin: .5em 0;
 
 }
-footer{
+
+a {
+    text-decoration: none;
+}
+
+footer {
 /* footer takes up full width and is fixed to the bottom of the page */
     position: fixed;
     bottom: 0;
@@ -22,7 +27,7 @@ footer{
     background-color: #fbfafd      
 }
 
-/* nav styles */
+/************** nav styles **************/
 nav,
 nav ul {
 /* nav adjust to viewport width */
@@ -39,7 +44,7 @@ nav ul {
     padding: 0px;
 }
 
-nav ul a{
+nav ul a {
     display: block;
     text-decoration: none;
     padding: .25em 5em;
@@ -51,7 +56,7 @@ nav ul a{
     font-size: 16px;
 }
 
-/* bio pic styles */
+/************** bio pic styles **************/
 .bio-img-container {
 /*clickable imgs adjust to viewport width  */
     display: flex;
@@ -74,8 +79,7 @@ nav ul a{
     box-shadow: 0px 0px 5px 2px  #36175a;
 }
 
-
-/* bio modal styles */
+/************** bio modal styles **************/
 .bio-modal {
     width: 305px; 
     max-width: fit-content;
@@ -115,15 +119,14 @@ nav ul a{
     padding: 0 20px 15px;
 }
 
-
-/* subscription link styles */
-#subscribe-link{
+/************** subscription section styles **************/
+#subscribe{
     padding-bottom: 25px;
     position: static;
     z-index: 1;
 }
 
-/* signup styles */
+/************** signup page styles **************/
 input,
 select{
     box-sizing: border-box;
@@ -150,7 +153,7 @@ select{
 }
 
 
-/* media queries */
+/************** media queries **************/
 
 @media (min-width: 650px){
 /* change to medium nav */
