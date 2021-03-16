@@ -1,7 +1,7 @@
 #   Bernethia's Beetles Fanpage
 
 ##  Page Description
-    This is a page for fans of my beetles. The landing page has a short section introducing the page, a "Meet My Beetles!" section featuring images and bios of my beetles, and an invitation to subscribe to a weekly newsletter along with a link to a signup form. The signup form validates user input and returns error messages or a welcome message customized with values from the form.
+-   This is a page for fans of my beetles. The landing page has a short section introducing the page, a "Meet My Beetles!" section featuring images and bios of my beetles, and an invitation to subscribe to a weekly newsletter along with a link to a signup form. The signup form validates user input and returns error messages or a welcome message customized with values from the form.
 
 ##  Required Features
 -   CSS feature: 

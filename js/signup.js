@@ -1,8 +1,8 @@
 // debugger;
-const firstName = document.getElementById('first-name');
-const email = document.getElementById('email');
-const birthday = document.getElementById('birthday');
-const favoriteBeetle = document.getElementById('favorite-beetle');
+const firstName = document.getElementById('first-name-input');
+const email = document.getElementById('email-input');
+const birthday = document.getElementById('birthday-input');
+const favoriteBeetle = document.getElementById('favorite-beetle-input');
 const submitButton = document.querySelector('button.submit');
 const formSubmitMessage = document.getElementById('form-submit-message');
 const formErrorMessages = [];
@@ -42,8 +42,8 @@ submitButton.addEventListener('click', () => {
     validateEmail();
     validateBirthday();
     validateFavoriteBeetle();
-    formSubmitMessage.innerHTML = '';
     if (formErrorMessages.length == 0) {
+        formSubmitMessage.innerHTML = '';
         let dateSplit = birthday.value.split('-');
         let birthMonthNumber = parseInt(dateSplit[1], 10);
         let birthMonth = monthsOfTheYear[birthMonthNumber-1];

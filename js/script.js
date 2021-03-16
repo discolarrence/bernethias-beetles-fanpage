@@ -1,5 +1,5 @@
 
-//define variables
+//declare variables
 const bioImgs = document.querySelectorAll('.bio-img-container img');
 const bioImgModals = document.querySelectorAll('.bio-modal');
 const xCloseIcons = document.querySelectorAll('.x-close-icon');
