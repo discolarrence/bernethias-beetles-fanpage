@@ -15,24 +15,36 @@ const monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June',
 function validateFirstName() {
     if (firstName.value.length == 0 || nameRegex.test(firstName.value) == false) {
         formErrorMessages.push('Please enter your first name using only lower and upper case letters.');
+        firstName.style.borderColor = 'red';
+    } else {
+        firstName.style.borderColor = 'black';
     }
 }
 
 function validateEmail() {
     if (emailRegex.test(email.value) == false || email.value.length == 0) {
         formErrorMessages.push('Please enter a valid email address.');
+        email.style.borderColor = 'red';
+    } else {
+        email.style.borderColor = 'black';
     }
 }
 
 function validateBirthday() {
     if (dateRegex.test(birthday.value) == false) {
         formErrorMessages.push('Please enter your birthday.');
+        birthday.style.borderColor = 'red';
+    } else {
+        birthday.style.borderColor = 'black';
     }
 }
 
 function validateFavoriteBeetle() {
     if (favoriteBeetle.value == '--Choose One--') {
         formErrorMessages.push('Please choose your favorite beetle.');
+        favoriteBeetle.style.borderColor = 'red';
+    } else {
+        favoriteBeetle.style.borderColor = 'black';
     }
 }
 
@@ -51,7 +63,7 @@ submitButton.addEventListener('click', () => {
         h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${birthMonth}.`;
         formSubmitMessage.appendChild(h4);
     } else {
-        formSubmitMessage.innerHTML = '<p class="required">*=required</p>';
+        formSubmitMessage.innerHTML = '<p class='required'>*=required</p>';
         for (i = 0; i < formErrorMessages.length; i++) {
             let p = document.createElement('p');
             p.textContent = formErrorMessages[i];

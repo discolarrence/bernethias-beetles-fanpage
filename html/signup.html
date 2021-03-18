@@ -31,25 +31,25 @@
             <p>Exclusive photos and videos, care tips, and chances to win cool beetle-themed prizes.</p>
         </div>
         <form class="signup-form">
-            <h3>Sign Up!</h3>
+            <h3>Sign Up Today!</h3>
             <div class="form-item first-name">
-                <label for="first-name">*First Name:</label>
+                <label for="first-name-input">*First Name:</label>
                 <input type="text" id="first-name-input" name="first-name" required pattern="\w">
             </div>
             <div class="form-item last-name">
-                <label for="last-name">Last Name:</label>
+                <label for="last-name-input">Last Name:</label>
                 <input type="text" id="last-name-input" name="last-name">
             </div>
             <div class="form-item email">
-                <label for="email">*Email:</label>
+                <label for="email-input">*Email:</label>
                 <input type="email" id="email-input" name="email" >
             </div>
             <div class="form-item birthday">
-                <label for="birthday">*Birthday</label>
+                <label for="birthday-input">*Birthday</label>
                 <input type="date" id="birthday-input" name="birthday">
             </div>
             <div class="form-item favorite-beetle">
-                <label for="favorite-beetle">*Who is your favorite beetle?</label>
+                <label for="favorite-beetle-input">*Who is your favorite beetle?</label>
                 <select id="favorite-beetle-input" name="favorite-beetle">
                     <option>--Choose One--</option>
                     <option>Big Girl</option>
@@ -60,7 +60,9 @@
                     <option>Strong Twin</option>
                 </select>
             </div>
-            <button type="button" class="submit">Submit</button>
+            <div class="form-item">
+                <button type="button" class="submit">Submit</button>
+            </div>
         </form>
         <div id="form-submit-message">
             <p class="required">*=required</p>
