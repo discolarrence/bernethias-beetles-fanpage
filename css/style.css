@@ -115,6 +115,27 @@ nav ul a {
     padding: 0 20px 15px;
 }
 
+/* align modals with clickable imgs in mobile view  */
+#blackbutt-modal{
+    margin-top: 415px;
+}
+
+#the-other-one-modal{
+    margin-top: 830px;
+}
+
+#new-girl-modal{
+    margin-top: 1245px;
+}
+
+#sickly-twin-modal{
+    margin-top: 1660px;
+}
+
+#strong-twin-modal{
+    margin-top: 2075px;
+}
+
 /************** subscription section styles **************/
 #subscribe {
     padding-bottom: 25px;
@@ -176,6 +197,7 @@ button {
 /* change to larger modal size */
     .bio-modal {
         width: 605px;
+        margin: auto;
     }
 }
 

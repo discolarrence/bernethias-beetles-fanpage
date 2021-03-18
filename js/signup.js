@@ -63,7 +63,7 @@ submitButton.addEventListener('click', () => {
         h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${birthMonth}.`;
         formSubmitMessage.appendChild(h4);
     } else {
-        formSubmitMessage.innerHTML = '<p class='required'>*=required</p>';
+        formSubmitMessage.innerHTML = '<p class="required">*=required</p>';
         for (i = 0; i < formErrorMessages.length; i++) {
             let p = document.createElement('p');
             p.textContent = formErrorMessages[i];
