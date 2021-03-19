@@ -69,7 +69,7 @@ nav ul a {
 
 .bio-img {
 /* clickable imgs setting for mobile */
-    width: 375px;
+    width: 325px;
     height: auto;
     margin: auto;
     margin-top: 20px;
@@ -79,7 +79,7 @@ nav ul a {
 
 /************** bio modal styles **************/
 .bio-modal {
-    width: 305px; 
+    width: 375px; 
     max-width: fit-content;
     background-color: #c5d4f8;
     border: 2px solid #36175a;
@@ -117,23 +117,23 @@ nav ul a {
 
 /* align modals with clickable imgs in mobile view  */
 #blackbutt-modal{
-    margin-top: 415px;
+    margin-top: 370px;
 }
 
 #the-other-one-modal{
-    margin-top: 830px;
+    margin-top: 740px;
 }
 
 #new-girl-modal{
-    margin-top: 1245px;
+    margin-top: 1110px;
 }
 
 #sickly-twin-modal{
-    margin-top: 1660px;
+    margin-top: 1480px;
 }
 
 #strong-twin-modal{
-    margin-top: 2075px;
+    margin-top: 1850px;
 }
 
 /************** subscription section styles **************/
@@ -144,6 +144,9 @@ nav ul a {
 }
 
 /************** signup page styles **************/
+.signup-page {
+    padding: 0 50px;
+}
 input,
 select, 
 button {
@@ -199,12 +202,36 @@ button {
         width: 605px;
         margin: auto;
     }
-}
+
+    #blackbutt-modal,
+    #the-other-one-modal,
+    #new-girl-modal,
+    #sickly-twin-modal,
+    #strong-twin-modal {
+        margin-top: 0;
+    }
+
+/* change to medium signup form */
+    .signup-form {
+        grid-template-columns: 1fr 1fr;
+        margin: 0 15px;
+    }
+
+    .signup-form h3,
+    .favorite-beetle,
+    .submit-button {
+        grid-column: 1 / -1;
+    }
+} 
 
 @media (min-width: 970px) {
 /* add margin on bigger viewport */
     body {
-        margin: 0 50px 0 50px;
+        margin: 0 50px;
+    }
+
+    .signup-page {
+        margin: 0 50px;
     }
 
 /* change to large nav */
@@ -227,5 +254,19 @@ button {
     #site-logo {
         width: 300px;
         margin: 0 50px;
+    }
+
+/* change to large signup form */
+    .signup-form {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .favorite-beetle {
+        grid-column: 2 / 3;
+    }
+    .submit-button {
+        grid-column: 3 / 4;
+        align-items: center;
+        justify-content: center;
     }
 }
