@@ -1,5 +1,6 @@
 const bioImgs = document.getElementsByClassName('bio-img');
-const bioImgModals = document.getElementsByClassName('.bio-modal');
+const bioImgModals = document.getElementsByClassName('bio-modal');
+const xCloseIcons = document.getElementsByClassName('x-close-icon');
 
 //close bio modals
 function closeBioModal() {
