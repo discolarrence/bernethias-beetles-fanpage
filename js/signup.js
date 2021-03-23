@@ -50,8 +50,8 @@ function validateFavoriteBeetle() {
     }
 }
 
-function getBirthMonth() {
-    let dateSplit = birthday.value.split('-');
+function getBirthMonth(yyyymmddDate) {
+    let dateSplit = yyyymmddDate.split('-');
     let birthMonthNumber = Number(dateSplit[1]);
     let birthMonth = monthsOfTheYear[birthMonthNumber-1];
     return birthMonth;
@@ -61,7 +61,7 @@ function writeFormSubmitMessage() {
     if (formErrorMessages.length == 0) {
         formSubmitMessage.innerHTML = '';
         let h4 = document.createElement('h4');
-        h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${getBirthMonth()}.`;
+        h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${getBirthMonth(birthday.value)}.`;
         formSubmitMessage.appendChild(h4);
     } else {
         formSubmitMessage.innerHTML = '<p class="required">*=required</p>';
