@@ -17,28 +17,36 @@ function clearFormErrorMessages() {
 function validateFirstName() {
     if (firstName.value.length == 0 || nameRegex.test(firstName.value) == false) {
         formErrorMessages.push('Please enter your first name using only lower and upper case letters.');
-        return false;
+        firstName.classList.add("invalid-field");
+    } else {
+        firstName.classList.remove("invalid-field")
     }
 }
 
 function validateEmail() {
     if (emailRegex.test(email.value) == false || email.value.length == 0) {
         formErrorMessages.push('Please enter a valid email address.');
-        return false;
+        email.classList.add("invalid-field");
+    } else {
+        email.classList.remove("invalid-field");
     }
 }
 
 function validateBirthday() {
     if (dateRegex.test(birthday.value) == false) {
         formErrorMessages.push('Please enter your birthday.');
-        return false;
+        birthday.classList.add("invalid-field");
+    } else {
+        birthday.classList.remove("invalid-field");        
     }
 }
 
 function validateFavoriteBeetle() {
     if (favoriteBeetle.value == '--Choose One--') {
         formErrorMessages.push('Please choose your favorite beetle.');
-        return false;
+        favoriteBeetle.classList.add("invalid-field");
+    } else {
+        favoriteBeetle.classList.remove("invalid-field");
     }
 }
 
@@ -49,18 +57,7 @@ function getBirthMonth() {
     return birthMonth;
 }
 
-function setFieldBorderColor() {
-    let formValidationFunctions = [[validateFirstName(), firstName], [validateEmail(), email], [validateBirthday(), birthday], [validateFavoriteBeetle(), favoriteBeetle]];
-    for (i = 0; i < formValidationFunctions.length; i++) {
-        if (formValidationFunctions[i][0] === false) {
-            document.formValidationFunctions[i][1].style.borderColor = "red"
-        } else {
-            document.formValidationFunctions[i][1].style.borderColor = "black" 
-        }
-    }
-}
-
-function writeFormSubmitMessage(){
+function writeFormSubmitMessage() {
     if (formErrorMessages.length == 0) {
         formSubmitMessage.innerHTML = '';
         let h4 = document.createElement('h4');
@@ -83,7 +80,6 @@ submitButton.addEventListener('click', () => {
     validateEmail();
     validateBirthday();
     validateFavoriteBeetle();
-    setFieldBorderColor();
     writeFormSubmitMessage();
 })
 
