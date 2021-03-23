@@ -1,9 +1,8 @@
-/************** body styles **************/
 body {
     box-sizing: border-box;
     font-family: 'Cormorant Infant', serif;
     color: #36175a;
-    margin: 0 20px 0 20px;
+    margin: 0 20px;
     background-color: #fbfafd
 }
 
@@ -147,6 +146,7 @@ nav ul a {
 .signup-page {
     padding: 0 50px;
 }
+
 input,
 select, 
 button {
@@ -264,7 +264,8 @@ button {
     .favorite-beetle {
         grid-column: 2 / 3;
     }
-    .submit-button {
+    
+    .submit-button { 
         grid-column: 3 / 4;
         align-items: center;
         justify-content: center;

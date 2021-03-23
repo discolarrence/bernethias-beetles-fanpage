@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="..\css\normalize.css">
-    <link rel="stylesheet" href="..\css\style.css">
-    <script defer src="..\js\signup.js"></script> 
-    <title>Bernethia's Beetles Newsletter Signup</title>
-</head>
-<body>
-    <header>
-        <nav> 
-            <a href="index.html">
-                <img src="..\img\bernethias-beetles-logo.png" alt="Bernethia's Beetles purple flower logo" id="site-logo">
-            </a>
-            <ul>
-                <li><a href="index.html#meet" class="nav-tabs">Beetle Bios</a></li>
-                <li><a href="#caresheet" class="nav-tabs">Beetle Facts</a></li>
-                <li><a href="signup.html" class="nav-tabs">Subscribe</a></li>
-                <li><a href="#contests" class="nav-tabs">Contests</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="signup-page">
-        <div id="form-header">
-            <h2>Bernethia's Beetles Weekly Newsletter</h2>
-            <p>Exclusive photos and videos, care tips, and chances to win cool beetle-themed prizes.</p>
-        </div>
-        <form class="signup-form">
-            <h3>Sign Up Today!</h3>
-            <div class="form-item first-name">
-                <label for="first-name-input">*First Name:</label>
-                <input type="text" id="first-name-input" name="first-name" required pattern="\w">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="..\css\normalize.css">
+        <link rel="stylesheet" href="..\css\style.css">
+        <script defer src="..\js\signup.js"></script> 
+        <title>Bernethia's Beetles Newsletter Signup</title>
+    </head>
+    <body>
+        <header>
+            <nav> 
+                <a href="..\index.html">
+                    <img src="..\img\bernethias-beetles-logo.png" alt="Bernethia's Beetles purple flower logo" id="site-logo">
+                </a>
+                <ul>
+                    <li><a href="index.html#meet" class="nav-tabs">Beetle Bios</a></li>
+                    <li><a href="#caresheet" class="nav-tabs">Beetle Facts</a></li>
+                    <li><a href="signup.html" class="nav-tabs">Subscribe</a></li>
+                    <li><a href="#contests" class="nav-tabs">Contests</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="signup-page">
+            <div id="form-header">
+                <h2>Bernethia's Beetles Weekly Newsletter</h2>
+                <p>Exclusive photos and videos, care tips, and chances to win cool beetle-themed prizes.</p>
             </div>
-            <div class="form-item last-name">
-                <label for="last-name-input">Last Name:</label>
-                <input type="text" id="last-name-input" name="last-name">
+            <form class="signup-form">
+                <h3>Sign Up Today!</h3>
+                <div class="form-item first-name">
+                    <label for="first-name-input">*First Name:</label>
+                    <input type="text" id="first-name-input" name="first-name" required pattern="\w">
+                </div>
+                <div class="form-item last-name">
+                    <label for="last-name-input">Last Name:</label>
+                    <input type="text" id="last-name-input" name="last-name">
+                </div>
+                <div class="form-item email">
+                    <label for="email-input">*Email:</label>
+                    <input type="email" id="email-input" name="email" >
+                </div>
+                <div class="form-item birthday">
+                    <label for="birthday-input">*Birthday:</label>
+                    <input type="date" id="birthday-input" name="birthday">
+                </div>
+                <div class="form-item favorite-beetle">
+                    <label for="favorite-beetle-input">*Who is your favorite beetle?</label>
+                    <select id="favorite-beetle-input" name="favorite-beetle">
+                        <option>--Choose One--</option>
+                        <option>Big Girl</option>
+                        <option>Blackbutt</option>
+                        <option>The Other One</option>
+                        <option>New Girl</option>
+                        <option>Sickly Twin</option>
+                        <option>Strong Twin</option>
+                    </select>
+                </div>
+                <div class="form-item submit-button">
+                    <button type="button" class="submit" id="submit-button">Submit</button>
+                </div>
+            </form>
+            <div id="form-submit-message">
+                <p class="required">*=required</p>
             </div>
-            <div class="form-item email">
-                <label for="email-input">*Email:</label>
-                <input type="email" id="email-input" name="email" >
-            </div>
-            <div class="form-item birthday">
-                <label for="birthday-input">*Birthday:</label>
-                <input type="date" id="birthday-input" name="birthday">
-            </div>
-            <div class="form-item favorite-beetle">
-                <label for="favorite-beetle-input">*Who is your favorite beetle?</label>
-                <select id="favorite-beetle-input" name="favorite-beetle">
-                    <option>--Choose One--</option>
-                    <option>Big Girl</option>
-                    <option>Blackbutt</option>
-                    <option>The Other One</option>
-                    <option>New Girl</option>
-                    <option>Sickly Twin</option>
-                    <option>Strong Twin</option>
-                </select>
-            </div>
-            <div class="form-item submit-button">
-                <button type="button" class="submit">Submit</button>
-            </div>
-        </form>
-        <div id="form-submit-message">
-            <p class="required">*=required</p>
-        </div>
-    </main>
-    <footer>
-        <small>&copy;2021, Bernethia Blossoms. All Rights Reserved.</small> 
-    </footer> 
-</body>
+        </main>
+        <footer>
+            <small>&copy;2021, Bernethia Blossoms. All Rights Reserved.</small> 
+        </footer> 
+    </body>
+</html>

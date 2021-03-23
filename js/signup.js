@@ -1,9 +1,8 @@
-// debugger;
 const firstName = document.getElementById('first-name-input');
 const email = document.getElementById('email-input');
 const birthday = document.getElementById('birthday-input');
 const favoriteBeetle = document.getElementById('favorite-beetle-input');
-const submitButton = document.querySelector('button.submit');
+const submitButton = document.getElementById('submit-button');
 const formSubmitMessage = document.getElementById('form-submit-message');
 const formErrorMessages = [];
 const nameRegex = /^[a-zA-Z]+$/;
@@ -11,56 +10,61 @@ const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}
 const dateRegex = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 const monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-// validate form fields & give error/welcome messages on submit
+function clearFormErrorMessages() {
+    formErrorMessages.length = 0;
+}
+
 function validateFirstName() {
     if (firstName.value.length == 0 || nameRegex.test(firstName.value) == false) {
         formErrorMessages.push('Please enter your first name using only lower and upper case letters.');
-        firstName.style.borderColor = 'red';
-    } else {
-        firstName.style.borderColor = 'black';
+        return false;
     }
 }
 
 function validateEmail() {
     if (emailRegex.test(email.value) == false || email.value.length == 0) {
         formErrorMessages.push('Please enter a valid email address.');
-        email.style.borderColor = 'red';
-    } else {
-        email.style.borderColor = 'black';
+        return false;
     }
 }
 
 function validateBirthday() {
     if (dateRegex.test(birthday.value) == false) {
         formErrorMessages.push('Please enter your birthday.');
-        birthday.style.borderColor = 'red';
-    } else {
-        birthday.style.borderColor = 'black';
+        return false;
     }
 }
 
 function validateFavoriteBeetle() {
     if (favoriteBeetle.value == '--Choose One--') {
         formErrorMessages.push('Please choose your favorite beetle.');
-        favoriteBeetle.style.borderColor = 'red';
-    } else {
-        favoriteBeetle.style.borderColor = 'black';
+        return false;
     }
 }
 
-submitButton.addEventListener('click', () => {
-    formErrorMessages.length = 0;
-    validateFirstName();
-    validateEmail();
-    validateBirthday();
-    validateFavoriteBeetle();
+function getBirthMonth() {
+    let dateSplit = birthday.value.split('-');
+    let birthMonthNumber = Number(dateSplit[1]);
+    let birthMonth = monthsOfTheYear[birthMonthNumber-1];
+    return birthMonth;
+}
+
+function setFieldBorderColor() {
+    let formValidationFunctions = [[validateFirstName(), firstName], [validateEmail(), email], [validateBirthday(), birthday], [validateFavoriteBeetle(), favoriteBeetle]];
+    for (i = 0; i < formValidationFunctions.length; i++) {
+        if (formValidationFunctions[i][0] === false) {
+            document.formValidationFunctions[i][1].style.borderColor = "red"
+        } else {
+            document.formValidationFunctions[i][1].style.borderColor = "black" 
+        }
+    }
+}
+
+function writeFormSubmitMessage(){
     if (formErrorMessages.length == 0) {
         formSubmitMessage.innerHTML = '';
-        let dateSplit = birthday.value.split('-');
-        let birthMonthNumber = parseInt(dateSplit[1], 10);
-        let birthMonth = monthsOfTheYear[birthMonthNumber-1];
         let h4 = document.createElement('h4');
-        h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${birthMonth}.`;
+        h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${getBirthMonth()}.`;
         formSubmitMessage.appendChild(h4);
     } else {
         formSubmitMessage.innerHTML = '<p class="required">*=required</p>';
@@ -71,6 +75,16 @@ submitButton.addEventListener('click', () => {
             formSubmitMessage.appendChild(p);
         }
     }
+}
+
+submitButton.addEventListener('click', () => {
+    clearFormErrorMessages();
+    validateFirstName();
+    validateEmail();
+    validateBirthday();
+    validateFavoriteBeetle();
+    setFieldBorderColor();
+    writeFormSubmitMessage();
 })
 
 
