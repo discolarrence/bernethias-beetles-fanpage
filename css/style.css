@@ -19,17 +19,15 @@ a {
 }
 
 footer {
-/* footer takes up full width and is fixed to the bottom of the page */
     position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #fbfafd      
 }
 
-/************** nav styles **************/
+/*nav styles*/
 nav,
 nav ul {
-/* nav adjust to viewport width */
     display: flex;
     flex-direction: column;
 }
@@ -55,19 +53,16 @@ nav ul a {
     font-size: 16px;
 }
 
-/************** bio pic styles **************/
+/*bio pic styles*/
 .bio-img-container {
     margin-bottom: 25px;
-/*clickable imgs adjust to viewport width  */
     display: flex;
     flex-wrap: wrap;
-/*imgs behind popup modal*/
     position: static;
     z-index: 1;
 }
 
 .bio-img {
-/* clickable imgs setting for mobile */
     width: 325px;
     height: auto;
     margin: auto;
@@ -76,23 +71,19 @@ nav ul a {
     box-shadow: 0px 0px 5px 2px  #36175a;
 }
 
-/************** bio modal styles **************/
+/*bio modal styles*/
 .bio-modal {
     width: 375px; 
     max-width: fit-content;
     background-color: #c5d4f8;
     border: 2px solid #36175a;
-/* bio modals are hidden */
     display: none;
     flex-direction: column;
-/*modals are in front of pictures*/
     z-index: 2;
     position: absolute;
-/* center */
     margin: auto;
     left: 0;
     right: 0; 
-/* shadow over other content when open*/
     box-shadow: 0px 0px 10px 1000px  #36175abb;  
 }
 
@@ -114,35 +105,15 @@ nav ul a {
     padding: 0 20px 15px;
 }
 
-/* align modals with clickable imgs in mobile view  */
-#blackbutt-modal{
-    margin-top: 370px;
-}
 
-#the-other-one-modal{
-    margin-top: 740px;
-}
-
-#new-girl-modal{
-    margin-top: 1110px;
-}
-
-#sickly-twin-modal{
-    margin-top: 1480px;
-}
-
-#strong-twin-modal{
-    margin-top: 1850px;
-}
-
-/************** subscription section styles **************/
+/* subscription section styles */
 #subscribe {
     padding-bottom: 25px;
     position: static;
     z-index: 1;
 }
 
-/************** signup page styles **************/
+/* signup page styles */
 .signup-page {
     padding: 0 50px;
 }
@@ -179,14 +150,14 @@ button {
 .invalid-field {
     background-color: mistyrose;
 }
+
 #form-submit-message {
     padding-bottom: 20px;
 }
 
-/************** media queries **************/
+/*media queries*/
 
 @media (min-width: 650px) {
-/* change to medium nav */
     nav {
         flex-direction: row;
         justify-content: space-evenly;

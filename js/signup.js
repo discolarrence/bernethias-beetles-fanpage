@@ -19,7 +19,7 @@ function validateFirstName() {
         formErrorMessages.push('Please enter your first name using only lower and upper case letters.');
         firstName.classList.add("invalid-field");
     } else {
-        firstName.classList.remove("invalid-field")
+        firstName.classList.remove("invalid-field");
     }
 }
 
