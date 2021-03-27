@@ -32,8 +32,24 @@ function validateEmail() {
     }
 }
 
+function formatDateInput(dateInput) {
+    if (dateInput.includes('/')) {
+        dateInput = dateInput.replace(/\//g, '-');
+    }
+    if (dateInput.charAt(4) !== '-') {
+        dateInputSplitArray = dateInput.split('-');
+        year = dateInputSplitArray[2];
+        dateYearRemovedFromEnd = dateInputSplitArray.splice(2, 1);
+        dateYearAddedToStart = dateYearRemovedFromEnd.splice(0, 0, year);
+        formattedDateInput = dateYearAddedToStart.join('-');
+        return formattedDateInput;
+    } else {
+        return dateInput;
+    }
+}
+
 function validateBirthday() {
-    if (dateRegex.test(birthday.value) == false) {
+    if (dateRegex.test(formatDateInput(birthday.value)) == false) {
         formErrorMessages.push('Please enter your birthday.');
         birthday.classList.add("invalid-field");
     } else {
