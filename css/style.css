@@ -64,9 +64,10 @@ nav ul a {
 
 .bio-img {
     width: 325px;
-    height: auto;
+    height: 325px;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
     border: 10px solid #c5d4f8;
     box-shadow: 0px 0px 5px 2px  #36175a;
 }
@@ -98,6 +99,7 @@ nav ul a {
 .modal-img {
     margin: 5px 20px 0 20px;
     max-width: fit-content;
+    max-height: 335px;
     box-shadow: 0px 0px 5px 2px  #36175a;
 }
 
@@ -169,6 +171,7 @@ button {
 
     .bio-img {
         width: 400px;
+        height: 400px;
     }
 
 /* change to larger modal size */
@@ -177,12 +180,8 @@ button {
         margin: auto;
     }
 
-    #blackbutt-modal,
-    #the-other-one-modal,
-    #new-girl-modal,
-    #sickly-twin-modal,
-    #strong-twin-modal {
-        margin-top: 0;
+    .modal-img {
+        max-height: 565px;
     }
 
 /* change to medium signup form */
