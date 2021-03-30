@@ -6,9 +6,9 @@ body {
     background-color: #fbfafd
 }
 
-h2, 
-h3,
-h4, 
+h1, 
+h2,
+h3, 
 p {
     margin: .5em 0;
 
@@ -146,7 +146,7 @@ button {
 
 .required,
 .error {
-    color: red;
+    color: #C41E3A;
 }
 
 .invalid-field {
@@ -190,7 +190,7 @@ button {
         margin: 0 15px;
     }
 
-    .signup-form h3,
+    .signup-form h2,
     .favorite-beetle,
     .submit-button {
         grid-column: 1 / -1;

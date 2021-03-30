@@ -10,20 +10,8 @@ const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}
 const dateRegex = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 const monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-function formatDateInput(dateInput) {
-    if (dateInput.includes('/')) {
-        dateInput = dateInput.replace(/\//g, '-');
-    }
-    if (dateInput.charAt(4) !== '-') {
-        dateInputSplitArray = dateInput.split('-');
-        year = dateInputSplitArray[2];
-        dateInputSplitArray.splice(2, 1);
-        dateInputSplitArray.splice(0, 0, year);
-        formattedDateInput = dateInputSplitArray.join('-');
-        return formattedDateInput;
-    } else {
-        return dateInput;
-    }
+function clearFormErrorMessages() {
+    formErrorMessages.length = 0;
 }
 
 function validateFirstName() {
@@ -44,9 +32,25 @@ function validateEmail() {
     }
 }
 
+function formatDateInput(dateInput) {
+    if (dateInput.includes('/')) {
+        dateInput = dateInput.replace(/\//g, '-');
+    }
+    if (dateInput.charAt(4) !== '-') {
+        dateInputSplitArray = dateInput.split('-');
+        year = dateInputSplitArray[2];
+        dateYearRemovedFromEnd = dateInputSplitArray.splice(2, 1);
+        dateYearAddedToStart = dateYearRemovedFromEnd.splice(0, 0, year);
+        formattedDateInput = dateYearAddedToStart.join('-');
+        return formattedDateInput;
+    } else {
+        return dateInput;
+    }
+}
+
 function validateBirthday() {
     if (dateRegex.test(formatDateInput(birthday.value)) == false) {
-        formErrorMessages.push('Please enter your birthday in mm/dd/yyyy format.');
+        formErrorMessages.push('Please enter your birthday.');
         birthday.classList.add("invalid-field");
     } else {
         birthday.classList.remove("invalid-field");        
@@ -62,10 +66,6 @@ function validateFavoriteBeetle() {
     }
 }
 
-function clearFormErrorMessages() {
-    formErrorMessages.length = 0;
-}
-
 function getBirthMonth(yyyymmddDate) {
     let dateSplit = yyyymmddDate.split('-');
     let birthMonthNumber = Number(dateSplit[1]);
@@ -76,9 +76,9 @@ function getBirthMonth(yyyymmddDate) {
 function writeFormSubmitMessage() {
     if (formErrorMessages.length == 0) {
         formSubmitMessage.innerHTML = '';
-        let h4 = document.createElement('h4');
-        h4.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${getBirthMonth(birthday.value)}.`;
-        formSubmitMessage.appendChild(h4);
+        let h3 = document.createElement('h3');
+        h3.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${getBirthMonth(birthday.value)}.`;
+        formSubmitMessage.appendChild(h3);
     } else {
         formSubmitMessage.innerHTML = '<p class="required">*=required</p>';
         for (i = 0; i < formErrorMessages.length; i++) {
