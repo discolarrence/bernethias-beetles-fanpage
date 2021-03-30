@@ -62,7 +62,9 @@ nav ul a {
     z-index: 1;
 }
 
-.bio-img {
+.bio-img,
+#contest-winner,
+#beetle-dinner {
     width: 325px;
     height: 325px;
     margin: auto;
@@ -109,7 +111,9 @@ nav ul a {
 
 
 /* subscription section styles */
-#subscribe {
+#subscribe,
+.contest-announcements,
+.beetle-care {
     padding-bottom: 25px;
     position: static;
     z-index: 1;
@@ -138,15 +142,24 @@ button {
     grid-gap: 15px;
 }
 
-.form-item {
+.form-item,
+.contest-announcements,
+.beetle-care {
     display: flex;
     flex-direction: column;
+}
+
+.form-item{
     align-items: center;
 }
 
 .required,
 .error {
     color: #C41E3A;
+}
+
+.blue-links {
+    color: #7007e9;
 }
 
 .invalid-field {
@@ -169,7 +182,9 @@ button {
         width: 200px;
     }
 
-    .bio-img {
+    .bio-img,
+    #contest-winner,
+    #beetle-dinner {
         width: 400px;
         height: 400px;
     }
@@ -203,7 +218,9 @@ button {
         margin: 0 50px;
     }
 
-    .signup-page {
+    .signup-page,
+    .contest-announcements,
+    .beetle-care {
         margin: 0 50px;
     }
 
@@ -242,5 +259,11 @@ button {
         grid-column: 3 / 4;
         align-items: center;
         justify-content: center;
+    }
+
+    #contest-winner,
+    #beetle-dinner {
+        width: 600px;
+        height: 600px;
     }
 }

@@ -32,16 +32,17 @@ function validateEmail() {
     }
 }
 
+// convert date to yyyy-mm-dd format for browsers using text input instead of datepicker
 function formatDateInput(dateInput) {
     if (dateInput.includes('/')) {
         dateInput = dateInput.replace(/\//g, '-');
     }
     if (dateInput.charAt(4) !== '-') {
         dateInputSplitArray = dateInput.split('-');
-        year = dateInputSplitArray[2];
-        dateYearRemovedFromEnd = dateInputSplitArray.splice(2, 1);
-        dateYearAddedToStart = dateYearRemovedFromEnd.splice(0, 0, year);
-        formattedDateInput = dateYearAddedToStart.join('-');
+        let year = dateInputSplitArray[2];
+        dateInputSplitArray.splice(2, 1);
+        dateInputSplitArray.splice(0, 0, year);
+        formattedDateInput = dateInputSplitArray.join('-');
         return formattedDateInput;
     } else {
         return dateInput;
