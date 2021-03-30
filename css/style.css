@@ -65,8 +65,8 @@ nav ul a {
 .bio-img,
 #contest-winner,
 #beetle-dinner {
-    width: 325px;
-    height: 325px;
+    width: 300px;
+    height: 300px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -76,7 +76,7 @@ nav ul a {
 
 /*bio modal styles*/
 .bio-modal {
-    width: 375px; 
+    width: 350px; 
     max-width: fit-content;
     background-color: #c5d4f8;
     border: 2px solid #36175a;
