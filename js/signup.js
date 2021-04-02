@@ -82,9 +82,9 @@ function writeFormSubmitMessage() {
         formSubmitMessage.appendChild(h3);
     } else {
         formSubmitMessage.innerHTML = '<p class="required">*=required</p>';
-        for (i = 0; i < formErrorMessages.length; i++) {
+        for (errorMessage of formErrorMessages) {
             let p = document.createElement('p');
-            p.textContent = formErrorMessages[i];
+            p.textContent = errorMessage;
             p.className = 'error'
             formSubmitMessage.appendChild(p);
         }

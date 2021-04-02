@@ -43,7 +43,6 @@ a {
 }
 
 .main-content {
-    margin: 0 10px;
     padding-bottom: 25px;
     position: static;
     z-index: 1;
@@ -83,7 +82,6 @@ a {
     padding: 5px 10px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: minmax(100px 1fr);
     grid-gap: 15px;
 }
 

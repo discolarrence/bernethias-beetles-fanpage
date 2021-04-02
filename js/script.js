@@ -3,14 +3,14 @@ const bioImgModals = document.getElementsByClassName('bio-modal');
 const xCloseIcons = document.getElementsByClassName('x-close-icon');
 
 function closeBioModal() {
-    for (i = 0; i < bioImgModals.length; i++) {
-        bioImgModals[i].style.display = 'none';
+    for (modal of bioImgModals) {
+        modal.style.display = 'none';
     }
 }
 
 // show beetle bio modal on image click
-for (i = 0; i < bioImgs.length; i++) {
-    bioImgs[i].addEventListener('click', (event) => {
+for (img of bioImgs) {
+    img.addEventListener('click', (event) => {
         closeBioModal();
         let beetleImg = document.getElementById(event.target.id+'-modal');
         let scrollYPosition = window.scrollY + 'px';
