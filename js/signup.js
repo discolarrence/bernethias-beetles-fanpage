@@ -7,8 +7,6 @@ const formSubmitMessage = document.getElementById('form-submit-message');
 const formErrorMessages = [];
 const nameRegex = /^[a-zA-Z]+$/;
 const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|'(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*')@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
-const dateRegex = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
-const monthsOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 function clearFormErrorMessages() {
     formErrorMessages.length = 0;
@@ -32,25 +30,8 @@ function validateEmail() {
     }
 }
 
-// convert date to yyyy-mm-dd format for browsers using text input instead of datepicker
-function formatDateInput(dateInput) {
-    if (dateInput.includes('/')) {
-        dateInput = dateInput.replace(/\//g, '-');
-    }
-    if (dateInput.charAt(4) !== '-') {
-        dateInputSplitArray = dateInput.split('-');
-        let year = dateInputSplitArray[2];
-        dateInputSplitArray.splice(2, 1);
-        dateInputSplitArray.splice(0, 0, year);
-        formattedDateInput = dateInputSplitArray.join('-');
-        return formattedDateInput;
-    } else {
-        return dateInput;
-    }
-}
-
 function validateBirthday() {
-    if (dateRegex.test(formatDateInput(birthday.value)) == false) {
+    if (birthday.value == '--Choose One--') {
         formErrorMessages.push('Please enter your birthday.');
         birthday.classList.add("invalid-field");
     } else {
@@ -67,18 +48,11 @@ function validateFavoriteBeetle() {
     }
 }
 
-function getBirthMonth(yyyymmddDate) {
-    let dateSplit = yyyymmddDate.split('-');
-    let birthMonthNumber = Number(dateSplit[1]);
-    let birthMonth = monthsOfTheYear[birthMonthNumber-1];
-    return birthMonth;
-}
-
 function writeFormSubmitMessage() {
     if (formErrorMessages.length == 0) {
         formSubmitMessage.innerHTML = '';
         let h3 = document.createElement('h3');
-        h3.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${getBirthMonth(birthday.value)}.`;
+        h3.textContent = `Thanks for signing up, ${firstName.value}! Check your email every week for all the latest news from the whole gang, and look for a special birthday message from ${favoriteBeetle.value} in ${birthday.value}.`;
         formSubmitMessage.appendChild(h3);
     } else {
         formSubmitMessage.innerHTML = '<p class="required">*=required</p>';
