@@ -4,8 +4,6 @@ https://discolarrence.github.io/bernethias-beetles-fanpage
 ##  Project Description
 -   This project is to practice and demonstrate what I have learned in my Code Louisville Front End Development class.
 
--   The idea is that my pet beetles have a fanbase, and this is a website for fans to learn more about them.
-
 ##  Required Features
 -   CSS
     -   The main navigation menu reorganizes for mobile, tablet and desktop views.
